@@ -1,3 +1,3 @@
-# Hello
+# AIM Day 2024
 
-[problem statement](./cmip6_to_agcd/problemstatement.md)
+The problem statement can be found [here](./cmip6_to_agcd/problemstatement.md)

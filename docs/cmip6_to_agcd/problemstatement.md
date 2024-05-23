@@ -9,7 +9,7 @@ permalink: /climatics-research-problem
 ## Definitions
 
 - **Variable:** A simple weather observation such as daily maximum temperature or daily total precipitation.
-- **Metric:** A derived measure based on variables, such as "the average number of days per year where the maximum temperature exceeds 40°C" or "the average number of days per year with more than 10mm of rainfall." 
+- **Metric:** A derived measure based on variables, such as "the average number of days per year where the maximum temperature exceeds 35°C" or "the average number of days per year with more than 10mm of rainfall." 
 More complex metrics include the annual average number of consecutive wet days (>1mm), heatwaves intensity/frequency (using BoM definition), and Standard Precipitation Index (SPI) statistics.
 
 ## Introduction
@@ -27,6 +27,11 @@ It is only attempting to represent the general climate.
 That is to say the CMIP6 climate models allow us to peer into the future, albeit with extremely blurry vision.
 This picture of the future is blurred not just spatially, but also temporally.
 To explain by way of example: while a CMIP6 temperature at a given point on a given day in 2015 should not be expected to match what was observed, the average temperature for a region over the 2015 to 2024 period should match what was observed. 
+
+We are not attempting to plot average temperature, but rather extreme weather metrics that can be derived from temperature (and precipitation).
+These metrics could be as simple as the average number of days over 35°C per year, or as complex and the average length of moderate-severity heatwaves as per the BoM definition (a somewhat complex calculation based on the Excess Heat Factor).
+We have found that regardless of how well a weather variable like temperature lines up between AGCD and CMIP6, these derived metrics usually have significantly different values for the same period, even if averaging over many years (2015-2024).
+So essentially our goal is to "downscale" data from the large CMIP6 pixels to match the spatial detail of the smaller AGCD pixels in terms of both average absolute value and statistical behaviour.
 
 There are existing efforts to "downscale" CMIP6 data using physics-based approaches, which a complex and computationally intensive. 
 In theory, they should produce a version of the CMIP6 data that is almost the same spatial resolution as the AGCD data.
