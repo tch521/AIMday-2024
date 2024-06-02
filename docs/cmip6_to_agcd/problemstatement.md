@@ -72,6 +72,11 @@ The Darwin chart above illustrates how there would still be an obvious discontin
 *Why not just normalise the underlying CMIP6 variable so that its mean and standard deviation match the AGCD data?*
 This would not help with the kinds of higher order, extremes-focused metrics we're trying to analyse (like heatwaves or consecutive wet days).
 
+*Why not use other basic kinds of scaling like [Climate Change in Australia](https://www.climatechangeinaustralia.gov.au/en/obtain-data/application-ready-data/scaling-methods/) does?*
+The key limitation of those approaches (used by My Cliamte View) is that they completely ignore any changes in dynamics that are being modelled.
+They do not produce a continuous time series, but instead append a scaled version of the historic observed time series, leaving a clear discontinuity.
+Furthermore, this actually wouldn't provide any information for metrics like heatwaves or consecutive wet days.
+
 *Why do this at all if it's not really what the CMIP6 data was intended for?*
 Partially because of TCFD regulations, there is a growing demand for this kind of data and there are already some companies supplying some of it.
 We have found this data to be highly dubious, often with little to no explanation of how it was derived and no quantified uncertainties.
@@ -120,10 +125,3 @@ Land use is more subtle, but it may help to factor in urban-heat-island effects.
 
 Random noise may help to better replicate certain statistical behaviours that are fundamentally missing from the low resolution CMIP6 data.
 It may be particularly useful for precipitation.
-
-## Conclusion
-
-This document is just a starting point for discussions and there are many, many open questions about how to approach this problem.
-
-> The CMIP6 models allow us to peek at a few different versions of the future, but the catch is that we don't have our glasses on - the images we see are blurry, as if we forgot to put on our glasses.
-> While we cannot be 100% certain, we should be able to make a reasonable estimate of what we're looking at based on context and our past experience.
