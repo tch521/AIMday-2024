@@ -20,7 +20,7 @@ The AGCD has a spatial resolution of 0.05 degrees and is derived from interpolat
 The CMIP6 dataset, on the other hand, simulates the climate under various emissions scenarios from 2015 to 2100 and has a spatial resolution of approximately 0.25 degrees. 
 This spatial relationship is illustrated below.
 
-![Diagram showing the relationship between a CMIP6 "pixel"and the 25 corresponding AGCD "pixels"](./images/c2a_pixel_comparison.svg)
+![Diagram showing the relationship between a CMIP6 "pixel" and the 25 corresponding AGCD "pixels"](./images/c2a_pixel_comparison.svg)
 
 The nature of CMIP6 climate models means that while there is data for 2015 onward, this data does not match the observed day-to-day weather. 
 It is only attempting to represent the general climate. 
@@ -33,7 +33,7 @@ These metrics could be as simple as the average number of days over 35°C per ye
 We have found that regardless of how well a weather variable like temperature lines up between AGCD and CMIP6, these derived metrics usually have significantly different values for the same period, even if averaging over many years (2015-2024).
 So essentially our goal is to "downscale" data from the large CMIP6 pixels to match the spatial detail of the smaller AGCD pixels in terms of both average absolute value and statistical behaviour.
 
-There are existing efforts to "downscale" CMIP6 data using physics-based approaches, which a complex and computationally intensive. 
+There are existing efforts to downscale CMIP6 data using physics-based approaches, which are complex and computationally intensive. 
 In theory, they should produce a version of the CMIP6 data that is almost the same spatial resolution as the AGCD data.
 One might therefore expect this downscaled data to have a reasonably good agreement with current observations.
 However, in our testing, we have not found this to be the case, as illustrated in the image below for a number of Australian cities.
@@ -85,7 +85,7 @@ We simply believe we can do better.
 How do we go about solving this problem in a practical way?
 Do we fit a model for every AGCD pixel and every CMIP6 climate model?
 What kind of model should they be? Would some machine learning be useful?
-(In principle we should not have to fit different models for the different CMIP6 emmissions scenarios since they all have the same starting point.)
+(In principle we should not have to fit different models for the different CMIP6 emissions scenarios since they all have the same starting point.)
 Some other more specific questions follow.
 
 ### *Do we translate CMIP6 variables and then derive metrics from those results, or do we translate metrics directly?*
@@ -114,7 +114,7 @@ The idea is that while a given point may be entirely within a single CMIP6 pixel
 
 The image above is a not-to-scale representation of some other useful data that we could incorporate into our models to improve the estimates.
 Elevation is known to have a particularly strong correlation with temperature so it is not hard to imagine how it could be useful.
-Land use is more subtle, but may help to factor in urban-heat-island effects.
+Land use is more subtle, but it may help to factor in urban-heat-island effects.
 
 ### *Should there be a random noise component?*
 
